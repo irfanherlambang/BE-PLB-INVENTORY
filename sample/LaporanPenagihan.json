@@ -1,0 +1,90 @@
+[
+    {
+        "nomor_invoice": "INV-2025010100214",
+        "nama_perusahaan": "DHL GLOBAL FORWARDING INDONESIA (Surabaya)",
+        "tanggal_invoice": "01/01/2025 00:00:00",
+        "nomor_faktur": "010.010.24.67869972",
+        "periode": "01/01/2025 00:00:00",
+        "tanggal_batas_pembayaran": "31/01/2025 00:00:00",
+        "jumlah": "18000000",
+        "tanggal_bayar": "",
+        "status": "Overdue"
+    },
+        {
+        "nomor_invoice": "INV-2024120100196",
+        "nama_perusahaan": "DHL GLOBAL FORWARDING INDONESIA (Surabaya)",
+        "tanggal_invoice": "01/12/2024 00:00:00",
+        "nomor_faktur": "010.010.24.67867720",
+        "periode": "01/12/2024 00:00:00",
+        "tanggal_batas_pembayaran": "31/12/2024 00:00:00",
+        "jumlah": "189120000",
+        "tanggal_bayar": "",
+        "status": "Overdue"
+    },
+    {
+        "nomor_invoice": "INV-2024110100172",
+        "nama_perusahaan": "DHL GLOBAL FORWARDING INDONESIA (Surabaya)",
+        "tanggal_invoice": "01/11/2024 00:00:00",
+        "nomor_faktur": "010.010.24.67865828",
+        "periode": "01/11/2024 00:00:00",
+        "tanggal_batas_pembayaran": "01/12/2024 00:00:00",
+        "jumlah": "18218300",
+        "tanggal_bayar": "",
+        "status": "Overdue"
+    },
+    {
+        "nomor_invoice": "INV-2025021500345",
+        "nama_perusahaan": "PT XYZ Logistics",
+        "tanggal_invoice": "15/02/2025 00:00:00",
+        "nomor_faktur": "020.020.25.12345678",
+        "periode": "15/02/2025 00:00:00",
+        "tanggal_batas_pembayaran": "17/03/2025 00:00:00",
+        "jumlah": "25000000",
+        "tanggal_bayar": "20/03/2025 00:00:00",
+        "status": "Paid"
+    },
+    {
+        "nomor_invoice": "INV-2025032000456",
+        "nama_perusahaan": "PT ABC Shipping",
+        "tanggal_invoice": "20/03/2025 00:00:00",
+        "nomor_faktur": "030.030.25.87654321",
+        "periode": "20/03/2025 00:00:00",
+        "tanggal_batas_pembayaran": "19/04/2025 00:00:00",
+        "jumlah": "15000000",
+        "tanggal_bayar": "",
+        "status": "Unpaid"
+    },
+    {
+        "nomor_invoice": "INV-2025041000567",
+        "nama_perusahaan": "PT Fast Cargo",
+        "tanggal_invoice": "10/04/2025 00:00:00",
+        "nomor_faktur": "040.040.25.11223344",
+        "periode": "10/04/2025 00:00:00",
+        "tanggal_batas_pembayaran": "10/05/2025 00:00:00",
+        "jumlah": "30000000",
+        "tanggal_bayar": "",
+        "status": "Unpaid"
+    },
+    {
+        "nomor_invoice": "INV-2025050500678",
+        "nama_perusahaan": "PT Global Freight",
+        "tanggal_invoice": "05/05/2025 00:00:00",
+        "nomor_faktur": "050.050.25.55667788",
+        "periode": "05/05/2025 00:00:00",
+        "tanggal_batas_pembayaran": "04/06/2025 00:00:00",
+        "jumlah": "22000000",
+        "tanggal_bayar": "01/06/2025 00:00:00",
+        "status": "Paid"
+    },
+    {
+        "nomor_invoice": "INV-2025061500789",
+        "nama_perusahaan": "PT Speedy Logistics",
+        "tanggal_invoice": "15/06/2025 00:00:00",
+        "nomor_faktur": "060.060.25.99887766",
+        "periode": "15/06/2025 00:00:00",
+        "tanggal_batas_pembayaran": "15/07/2025 00:00:00",
+        "jumlah": "27000000",
+        "tanggal_bayar": "",
+        "status": "Unpaid"
+    }
+]

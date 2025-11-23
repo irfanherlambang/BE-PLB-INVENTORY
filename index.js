@@ -15,10 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const userRoute = require("./routes/userRoute.js");
 const settingRoute = require("./routes/settingRoute.js");
 const browseRoute = require("./routes/browseRoute.js");
+const tagihanRoute = require("./routes/tagihanRoute.js");
 
 app.use("/user", userRoute);
 app.use("/setting", settingRoute);
 app.use("/browse", browseRoute);
+app.use("/tagihan", tagihanRoute);
 
 
 const PORT = process.env.PORT || 801;

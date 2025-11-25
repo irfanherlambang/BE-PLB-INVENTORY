@@ -1,0 +1,73 @@
+{
+  "history": [
+    {
+      "date": "2025-11-18",
+      "label": "Hari Ini (18 November 2025)",
+      "items": [
+        { "time": "10:22 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "09:20 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "08:19 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "07:17 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "06:15 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "05:14 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "04:12 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "03:10 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "02:08 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "01:06 am", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "12:04 am", "status": "Respon BC", "user": "SYSTEM" }
+      ]
+    },
+    {
+      "date": "2025-11-17",
+      "label": "17 November 2025",
+      "items": [
+        { "time": "11:02 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "09:59 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "08:57 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "07:55 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "06:53 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "05:50 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "04:48 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "03:45 pm", "status": "Respon BC", "user": "SYSTEM" },
+        { "time": "02:42 pm", "status": "GATE OUT TPS", "user": "SYSTEM" },
+        { "time": "02:40 pm", "status": "PENJALURAN", "user": "SYSTEM" },
+        { "time": "02:30 pm", "status": "SIAP JALUR", "user": "SYSTEM" },
+        { "time": "02:29 pm", "status": "VALIDASI", "user": "SYSTEM" },
+        { "time": "02:29 pm", "status": "LNSW - CEK MANDATORY CONTENT", "user": "SYSTEM" },
+        { "time": "02:29 pm", "status": "LNSW - PENERIMAAN DOKUMEN", "user": "SYSTEM" },
+        { "time": "02:29 pm", "status": "KIRIM DOKUMEN KE INSW", "user": "SYSTEM" },
+        { "time": "02:25 pm", "status": "PEREKAMAN DOKUMEN", "user": "SYSTEM" },
+        { "time": "02:25 pm", "status": "BERHASIL MASUK CEISA", "user": "SYSTEM" },
+        { "time": "03:34 pm", "status": "Dokumen telah disetujui", "user": "Tri Handi" },
+        { "time": "02:25 pm", "status": "KIRIM CEISA", "user": "Tri Handi" },
+        { "time": "10:13 am", "status": "Dokumen telah disetujui", "user": "Tri Handi" },
+        { "time": "09:43 am", "status": "DRAFT", "user": "System Administrator" },
+        { "time": "10:12 am", "status": "Dokumen terbit", "user": "SYSTEM" },
+        { "time": "10:06 am", "status": "Dokumen dalam proses", "user": "Deni Setiaji" },
+        { "time": "09:55 am", "status": "Order dikirim ke Clickargo", "user": "Fin Log - Denso Indonesia" },
+        { 
+          "time": "09:54 am", 
+          "status": "Membuat draft order", 
+          "user": "Fin Log - Denso Indonesia",
+          "extra": {
+            "jobNumber": "CK/CLD/202511-80871",
+            "catatan": {
+              "BC_1_0": "-",
+              "Tanggal_BC_1_0": "-",
+              "ETA": "2025-11-17",
+              "ETD": "2025-11-12",
+              "CONFIDENTIAL": true,
+              "Shipping Document": "shipping dokumen PIB DNIA by SEA dari  _ DSTH _",
+              "note": "Mohon bisa dilanjut.",
+              "AJU": "000020-010002-20251118-130981",
+              "FREIGHT": "IDR 6.000.000",
+              "ETA": "17-11-2025",
+              "Cargo Type": "LCL / PART OF",
+              "FLAG": "PANAMA."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

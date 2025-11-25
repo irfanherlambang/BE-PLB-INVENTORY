@@ -43,5 +43,43 @@ module.exports = {
         }
     },
 
+    dokumen_history: async function (req, res) {
+        try {
+            const id = req.params.id;
+
+            const dataPath = path.join(__dirname, '../sample/RiwayatOrder.json');
+            const rawData = fs.readFileSync(dataPath);
+            const data = JSON.parse(rawData);
+
+            res.status(200).json({ kode: 200, data });
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error);
+        }
+    },
+
+    dokumen_respondoc: async function (req, res) {
+        try {
+            const orderId = req.params.id;
+
+            const dataPath = path.join(__dirname, '../sample/ResponDokumen.json');
+            const raw = fs.readFileSync(dataPath, 'utf8');
+            const json = JSON.parse(raw);
+
+            const responses = json.data.filter(item => item.orderId === orderId);
+
+            return res.status(200).json({
+            kode: 200,
+            data: responses
+            });
+
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ kode: 500, message: "Server error" });
+        }
+    }
+
+
+
 
 }

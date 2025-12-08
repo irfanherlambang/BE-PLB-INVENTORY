@@ -15,8 +15,8 @@
         "nama_perusahaan": "DHL GLOBAL FORWARDING INDONESIA (Surabaya)",
         "tanggal_invoice": "01/12/2024 00:00:00",
         "nomor_faktur": "010.010.24.67867720",
-        "periode": "01/12/2024 00:00:00",
-        "tanggal_batas_pembayaran": "31/12/2024 00:00:00",
+        "periode": "01/12/2024 00:00:09",
+        "tanggal_batas_pembayaran": "30/12/2024 00:00:00",
         "jumlah": "189120000",
         "tanggal_bayar": "",
         "status": "Overdue"

@@ -6,6 +6,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
 router.post(`/login`, userController.login);
+router.post(`/google-login`, userController.loginWithGoogle);
 router.get(`/list`, userController.list);
 router.post(`/register`, userController.registerUser);
 router.delete(`/deleteUser`, userController.deleteUser);

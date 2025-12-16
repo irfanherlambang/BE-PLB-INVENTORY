@@ -2,6 +2,8 @@ const express = require('express');
 const { DB } = require('../config/conf');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
+const { OAuth2Client } = require("google-auth-library");
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 
 module.exports = {
@@ -104,6 +106,108 @@ module.exports = {
                     code: error.code
                 }
             });
+        }
+    },
+
+    loginWithGoogle: async function (req, res) {
+        try {
+            const request = DB.promise();
+            const { token } = req.body;
+
+            if (!token) {
+                return res.status(400).json({ kode: 400, message: "Token Google wajib dikirim" });
+            }
+
+            const ticket = await googleClient.verifyIdToken({
+                idToken: token,
+                audience: process.env.GOOGLE_CLIENT_ID,
+            });
+
+            const payload = ticket.getPayload();
+            const { email, name } = payload;
+
+            const [users] = await request.query(
+                `SELECT * FROM m_user WHERE email = ? LIMIT 1`, 
+                [email]
+            );
+
+            let user = users[0];
+
+            //auto-register user
+            if (!user) {
+                await request.query(`
+                    INSERT INTO m_user (m_user_id, nama_user, email, pwd, isactive, role_id, createdate)
+                    VALUES (UUID(), ?, ?, NULL, 1, 1, NOW())
+                `, [name, email]);
+
+                const [newUser] = await request.query(
+                    `SELECT * FROM m_user WHERE email = ? LIMIT 1`,
+                    [email]
+                );
+
+                user = newUser[0];
+            }
+
+            const roleQuery = `
+                SELECT 
+                    b.nama_role, 
+                    c.role_menu_id, 
+                    c.header_menu, 
+                    c.child_menu,
+                    MIN(d.sort) as sort
+                FROM m_user a
+                INNER JOIN m_role b ON a.role_id = b.role_id 
+                INNER JOIN role_menu c ON c.role_id = b.role_id 
+                INNER JOIN m_menu d ON d.header_menu = c.header_menu 
+                WHERE a.m_user_id = ? AND c.isactive = 1
+                GROUP BY b.nama_role, c.role_menu_id, c.header_menu, c.child_menu
+                ORDER BY sort ASC
+            `;
+
+            const [roleMenus] = await request.query(roleQuery, [user.m_user_id]);
+
+            const processedMenus = [];
+            const processedHeaders = new Set();
+
+            for (let i = 0; i < roleMenus.length; i++) {
+                const { header_menu, child_menu, sort, role_menu_id, nama_role } = roleMenus[i];
+
+                if (processedHeaders.has(header_menu)) continue;
+                processedHeaders.add(header_menu);
+
+                let children = [];
+
+                if (child_menu) {
+                    const arr = child_menu.split(',').map(c => c.trim());
+                    const placeholders = arr.map(() => '?').join(",");
+                    const [childResults] = await request.query(`
+                        SELECT * FROM m_menu 
+                        WHERE child IN (${placeholders}) 
+                        AND header_menu = ? AND isactive = 1 ORDER BY sort ASC
+                    `, [...arr, header_menu]);
+
+                    children = childResults;
+                }
+
+                processedMenus.push({
+                    role_menu_id,
+                    header_menu,
+                    child_menu,
+                    nama_role,
+                    sort,
+                    child: children
+                });
+            }
+
+            return res.status(200).json({
+                kode: 200,
+                message: "OK",
+                data: { user, roleMenus: processedMenus, avatar: picture }
+            });
+
+        } catch (error) {
+            console.error("Google Login Error:", error);
+            return res.status(500).json({ kode: 500, message: "Server Error", error });
         }
     },
 
